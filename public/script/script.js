@@ -5,7 +5,7 @@ async function fetchStockPrice(symbol) {
       console.log(`${symbol}: $${price} (${change})`);
       return { price, change };
     } catch (err) {
-      console.error('Fetch error:', err);
+      console.error('Unknown symbol');
     }
 }
 
@@ -93,8 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch(`/api/request/${symbol}`);
             const data = await response.json();
             result.textContent = `$${data.price}`;
+            window.location.href = '/fetchstock';
         } catch (error) {
             result.textContent = "Error loading price";
         }
+        window.location.href = '/fetched/stock';
     });
 });
