@@ -96,6 +96,5 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             result.textContent = "Error loading price";
         }
-        window.location.href = '/fetched/stock';
     });
 });

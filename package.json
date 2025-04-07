@@ -13,6 +13,7 @@
   "type": "module",
   "dependencies": {
     "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
     "google-stocks": "^2.0.1",
     "path": "^0.12.7",
     "url": "^0.11.4",
