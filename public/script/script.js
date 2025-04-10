@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const result = document.getElementById('result');
         
         try {
-            const response = await fetch(`/api/request/${symbol}`);
+            const response = await fetch(`/api/stock/${symbol}`);
             const data = await response.json();
             result.textContent = `$${data.price}`;
             window.location.href = '/fetchstock';

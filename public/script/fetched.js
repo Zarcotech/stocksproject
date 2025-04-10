@@ -14,7 +14,7 @@ const price = document.getElementById('price');
 document.addEventListener("DOMContentLoaded", () => {
   const price = document.getElementById('price');
   try {
-    const response = fetch(`/api/request/${symbol}`);
+    const response = fetch(`/api/stock/${symbol}`);
     const data = response.json();
     price.textContent = `$${data.price}`;
   } catch (error) {
