@@ -66,25 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById('input');
     const result = document.getElementById('result');
 
-    // if (submitBtn && input && result) {
-    //     submitBtn.addEventListener('click', async () => {
-    //         const symbol = input.value.trim();
-    //         if (!symbol) return;
-
-    //         try {
-    //             const response = await fetch(`/api/stock/${symbol}`);
-    //             if (!response.ok) throw new Error('API error');
-    //             const data = await response.json();
-    //             result.textContent = `$${data.price}`;
-    //         } catch (error) {
-    //             result.textContent = 'No such Symbol in NASDAQ Stock Market';
-    //             console.error(error);
-    //         }
-    //     });
-    // } else {
-    //     console.error('Required elements not found');
-    // }
-
     document.getElementById('submit').addEventListener('click', async () => {
         const symbol = document.getElementById('input').value.trim();
         const result = document.getElementById('result');
@@ -97,6 +78,48 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             result.textContent = "Error loading price";
         }
-        window.location.href = '/fetched/stock';
+        window.location.href = '/fetchstock';
     });
+
+    const iframe = document.getElementById('iframe');
+    if (!iframe) {
+        console.error('Iframe not found in the DOM.');
+        return;
+    }
+
+    iframe.onload = function () {
+        try {
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            if (!iframeDocument) {
+                console.error('Unable to access iframe document.');
+                return;
+            }
+
+            const inputElement = iframeDocument.getElementById('input');
+            if (!inputElement) {
+                console.error('Input element not found in iframe.');
+                return;
+            }
+
+            console.log('Input element found:', inputElement);
+
+            // Add an event listener to log the input value dynamically
+            inputElement.addEventListener('input', () => {
+                console.log('Updated input value:', inputElement.value);
+            });
+
+            const inputValue = inputElement.value;
+            console.log('Input value:', inputValue);
+
+            if (inputValue) {
+                next = inputValue;
+                console.log(`Next value set to: ${next}`);
+                loadPrice();
+            } else {
+                console.error('Input value is empty. Waiting for user input...');
+            }
+        } catch (error) {
+            console.error('Error accessing iframe content:', error);
+        }
+    };
 });
