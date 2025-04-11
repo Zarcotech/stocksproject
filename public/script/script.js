@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const symbol = document.getElementById('input').value.trim();
         const result = document.getElementById('result');
         
+<<<<<<< HEAD
         localStorage.setItem('sharedValue', symbol);
         // try {
         //     const response = await fetch(`/api/request/${symbol}`);
@@ -80,5 +81,16 @@ document.addEventListener("DOMContentLoaded", function () {
         //     result.textContent = "Error loading price";
         // }
         window.location.href = '/fetchstock';
+=======
+        try {
+            const response = await fetch(`/api/stock/${symbol}`);
+            const data = await response.json();
+            result.textContent = `$${data.price}`;
+            window.location.href = '/fetchstock';
+        } catch (error) {
+            result.textContent = "Error loading price";
+        }
+        window.location.href = '/fetched/stock';
+>>>>>>> 2aea4c464eaaed9b19b8c02351acce1e941bad7d
     });
 });

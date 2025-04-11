@@ -15,14 +15,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   const change = document.getElementById('change');
 
   try {
+<<<<<<< HEAD
       const response = await fetch(`/api/request/${symbol}`);
       const data = await response.json();
       pricetag.textContent = `$${data.price}`;
       change.textContent = `${data.change}`;
+=======
+    const response = fetch(`/api/stock/${symbol}`);
+    const data = response.json();
+    price.textContent = `$${data.price}`;
+>>>>>>> 2aea4c464eaaed9b19b8c02351acce1e941bad7d
   } catch (error) {
       pricetag.textContent = "Error loading price";
       change.textContent = "Error loading change";
   }
+<<<<<<< HEAD
 
   const time = new Date();
   const centralTime = time.toLocaleString("en-US", { timeZone: "America/Chicago" });
@@ -48,3 +55,6 @@ reloadAfter(300000);
 
 
 
+=======
+});
+>>>>>>> 2aea4c464eaaed9b19b8c02351acce1e941bad7d
