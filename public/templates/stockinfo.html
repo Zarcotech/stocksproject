@@ -6,8 +6,22 @@
     <title>Zarcotech Uranium </title>
 </head>
 <body>
-    <iframe src="../templates/index.html" frameborder="0" style="width: 0; height: 0;" id="iframe"></iframe>
-    <span id="price"></span>
+    <div class="conatainer">
+        <div class="header">
+            <h1>Zarcotech Uranium</h1>
+        </div>
+        <div class="content">
+            <h2>Stock Information</h2>
+            <div id="stock-info">
+                <p>Current price: <span id="price"></span></p>
+                <p>Price change: <span id="change"></span></p>
+                <p>Last updated: <span id="timeupd"></span></p>
+            </div>
+        </div>
+        <!-- <div class="footer">
+            <p>&copy; 2025 Zarcotech Incorporations. All rights reserved.</p>
+        </div> -->
+    </div>
     <script src="../script/fetched.js" type="module"></script>
     <script src="../script/script.js" type="module"></script>
 </body>

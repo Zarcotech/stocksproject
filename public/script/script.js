@@ -70,56 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const symbol = document.getElementById('input').value.trim();
         const result = document.getElementById('result');
         
-        try {
-            const response = await fetch(`/api/request/${symbol}`);
-            const data = await response.json();
-            result.textContent = `$${data.price}`;
-            window.location.href = '/fetchstock';
-        } catch (error) {
-            result.textContent = "Error loading price";
-        }
+        localStorage.setItem('sharedValue', symbol);
+        // try {
+        //     const response = await fetch(`/api/request/${symbol}`);
+        //     const data = await response.json();
+        //     result.textContent = `$${data.price}`;
+        //     window.location.href = '/fetchstock';
+        // } catch (error) {
+        //     result.textContent = "Error loading price";
+        // }
         window.location.href = '/fetchstock';
     });
-
-    const iframe = document.getElementById('iframe');
-    if (!iframe) {
-        console.error('Iframe not found in the DOM.');
-        return;
-    }
-
-    iframe.onload = function () {
-        try {
-            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            if (!iframeDocument) {
-                console.error('Unable to access iframe document.');
-                return;
-            }
-
-            const inputElement = iframeDocument.getElementById('input');
-            if (!inputElement) {
-                console.error('Input element not found in iframe.');
-                return;
-            }
-
-            console.log('Input element found:', inputElement);
-
-            // Add an event listener to log the input value dynamically
-            inputElement.addEventListener('input', () => {
-                console.log('Updated input value:', inputElement.value);
-            });
-
-            const inputValue = inputElement.value;
-            console.log('Input value:', inputValue);
-
-            if (inputValue) {
-                next = inputValue;
-                console.log(`Next value set to: ${next}`);
-                loadPrice();
-            } else {
-                console.error('Input value is empty. Waiting for user input...');
-            }
-        } catch (error) {
-            console.error('Error accessing iframe content:', error);
-        }
-    };
 });
