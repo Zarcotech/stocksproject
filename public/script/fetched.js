@@ -51,4 +51,3 @@ function reloadAfter(delay) {
 reloadAfter(300000);
 
 });
->>>>>>> 2aea4c464eaaed9b19b8c02351acce1e941bad7d
