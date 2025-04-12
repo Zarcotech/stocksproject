@@ -1,0 +1,55 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #333333);
+    color: #ffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffff00;
+}
+
+.content h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+#stock-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #ffff00;
+}
+
+#stock-info span {
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #999900;
+}
