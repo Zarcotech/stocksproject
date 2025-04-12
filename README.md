@@ -47,7 +47,7 @@ Contributions are welcome! Please follow these steps:
 5. Open a pull request.
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ## Contact
 For questions or feedback, please contact [zidan.harb2012@gmail.com].
