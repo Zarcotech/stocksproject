@@ -1,7 +1,7 @@
-# Stocks Project
+# Zarcotech Uranium
 
 ## Overview
-This project is designed to show stock status based on symbol.
+This project is designed to show stock status based on NASDAQ stock symbol.
 
 ## Features
 - Stock price tracking
@@ -11,7 +11,7 @@ This project is designed to show stock status based on symbol.
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Zarcotech/stocksproject.git
+    git clone https://github.com/Zarcotech/zarcotech-uranium.git
     ```
 2. Navigate to the project directory:
     ```bash
