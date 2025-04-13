@@ -15,7 +15,7 @@ This project is designed to show stock status based on NASDAQ stock symbol.
     ```
 2. Navigate to the project directory:
     ```bash
-    cd stocksproject
+    cd zarcotech-uranium
     ```
 3. Install dependencies:
     ```bash
