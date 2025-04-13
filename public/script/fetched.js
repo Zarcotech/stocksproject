@@ -12,18 +12,18 @@ async function fetchStockPrice(symbol) {
 let currentAudio;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const isFetchedPage = window.location.pathname === '/fetched/stock';
+  // const isFetchedPage = window.location.pathname === '/fetched/stock';
 
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
+  // if (currentAudio) {
+  //   currentAudio.pause();
+  //   currentAudio.currentTime = 0;
+  // }
 
-  currentAudio = isFetchedPage 
-    ? new Audio('../audio/brazil.mp3') 
-    : new Audio('../audio/tesla.mp3');
+  // currentAudio = isFetchedPage 
+  //   ? new Audio('../audio/brazil.mp3') 
+  //   : new Audio('../audio/tesla.mp3');
 
-  currentAudio.play();
+  // currentAudio.play();
 
   if (isFetchedPage) {
     const symbol = localStorage.getItem('sharedValue');

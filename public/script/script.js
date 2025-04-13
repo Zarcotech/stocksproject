@@ -54,14 +54,14 @@ class TypeWriter {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    let currentPath = window.location.pathname;
-    let audio = new Audio('../audio/tesla.mp3');
-    document.addEventListener('click', function () {
-        if (currentPath === '/'){
-            audio.play();
-        }
-    }, { once: true });
-    audio.loop = false;
+    // let currentPath = window.location.pathname;
+    // let audio = new Audio('../audio/tesla.mp3');
+    // document.addEventListener('click', function () {
+    //     if (currentPath === '/'){
+    //         audio.play();
+    //     }
+    // }, { once: true });
+    // audio.loop = false;
 
     let elements = document.getElementsByClassName("typewrite");
     for (let i = 0; i < elements.length; i++) {
